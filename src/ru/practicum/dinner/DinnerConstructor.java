@@ -28,13 +28,12 @@ public class DinnerConstructor {
     void addTypeAndNameDish(String dishType, String dishName) {
 
         ArrayList<String> listOfDish = new ArrayList<>();
+        listOfDish.add(dishName);
         if (checkType(dishType)) {  // проверяем есть ли такой тип блюда
-            listOfDish.add(dishName);
             menu.get(dishType).add(dishName);
             System.out.println("К типу блюд - " + dishType.toLowerCase() + ". \nДобавлено еще одно блюдо - "
                     + dishName.toLowerCase());
         } else {  //  Если такого типа нет. Добавляем новый тип блюда и добавляем туда само блюдо
-            listOfDish.add(dishName);
             menu.put(dishType, listOfDish);
             System.out.println("Вы добавили новый тип блюда - " + dishType.toLowerCase() + ". \nБлюдо - "
                     + dishName.toLowerCase() + ", внесен в данный тип");
